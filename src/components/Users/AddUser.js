@@ -11,6 +11,14 @@ const AddUser = (props) => {
 
     const addUserHandler = (event) => {
         event.preventDefault(); // entered value utilize here
+        
+        //only executes if we have valid inputs
+        if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0){
+            return;
+        }
+        if (+enteredAge < 1) {
+            return;
+        } // force a conversion of entered age to a number by adding a plus
         console.log(enteredUsername, enteredAge);
         setEnteredUsername('');//resetting
         setEnteredAge('');
